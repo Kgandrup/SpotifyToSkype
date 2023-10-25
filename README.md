@@ -8,11 +8,14 @@ Lyrics command?
 Required Dependencies:
 --------------
 Python 3.11 or later
+
 Spotipy
+
 SkPy
+
 time
 
-Setup:
+# Setup:
 
 Download the folder and open in any code editing program. Open the spotifytoskype.py file and look for a couple of blank spaces.
 
@@ -26,7 +29,7 @@ The program should be ready to run!
 
 
 
-Customization:
+# Customization:
 
 If you want to customize the messages, you can edit them on line 41. Line 41 is the actual status message. You can edit anything in there except the {current_song} and {artist_name} variables.
 If no song is playing, you can set the mood message to a specific message on line 34. If you leave it blank, your status will go blank.
@@ -35,5 +38,5 @@ If you want the program to check for song statuses faster, update line 56's "sle
 
 
 
-NOTE: 
+## NOTE: 
 Skype does take time to update the status server side. There is nothing that can be done to avoid that. Spotify also takes 5-10 minutes to detect that no song is playing, due to how the API works. I wish there was a way to lower that timing down but as of right now its unavoidable
