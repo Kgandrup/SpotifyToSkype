@@ -6,11 +6,12 @@ Ability to see song progress in the status
 Lyrics command?
 
 Required Dependencies:
+--------------
 Python 3.11 or later
 Spotipy
 SkPy
 time
---------------
+
 Setup:
 
 Download the folder and open in any code editing program. Open the spotifytoskype.py file and look for a couple of blank spaces.
