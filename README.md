@@ -5,6 +5,8 @@ Roadmap:
 Ability to see song progress in the status
 Lyrics command?
 
+Also I know the code sucks. I haven't coded in python in like 3-4 years...
+
 Required Dependencies:
 --------------
 Python 3.11 or later
