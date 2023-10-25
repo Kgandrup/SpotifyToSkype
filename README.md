@@ -5,7 +5,7 @@ Roadmap:
 Ability to see song progress in the status
 Lyrics command?
 
-Also I know the code sucks. I haven't coded in python in like 3-4 years...
+Also I know the code sucks. I haven't coded in python in like 3-4 years... And there are still a lot of issues I'm uncovering with the current functionality. I'll probably work on the code here and there. This was more like a 'for fun' project than something to try and market and publish.
 
 
 
