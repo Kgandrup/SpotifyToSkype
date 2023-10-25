@@ -31,7 +31,7 @@ except SkypeAuthException:
     print("Error: Failed to log in to Skype.")
 
 # Declare mood_text outside of mood_updater
-mood_text = "1"
+mood_text = "SET MOOD TEXT WHENEVER SONG ISN'T PLAYING"
 previous_song = None  # Variable to store previous song
 
 # Mood Updater
@@ -45,8 +45,12 @@ def mood_updater(current_song, artist_name):
 while True:
     current_song, artist_name = get_current_song_info()
     if current_song is not None and current_song != previous_song:
-        print(f"Listening to: {current_song} - {artist_name}") 
+        print(f"Updating Status: {current_song} - {artist_name}") 
         mood_updater(current_song, artist_name)
     else:
-        print("Same song is playing!")
+        if current_song is None:
+            print("No song is playing")
+            sk.setMood(mood_text)
+        else:
+            print("Same Song is Playing")
     sleep(15)  # Delay for 15 seconds before checking again
