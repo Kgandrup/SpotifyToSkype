@@ -7,8 +7,8 @@ from time import sleep  # Import sleep function for delay
 scope = 'user-read-currently-playing'
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
     scope=scope,
-    client_id='ffd46616f9d143bba98d2477099654aa',
-    client_secret='073c32b1bd8f4366b0f925607768c173',
+    client_id='INSERT SPOTIFY CLIENT ID HERE',
+    client_secret='CLIENT SECRET',
     redirect_uri='http://localhost:8080/callback'
 ))
 
@@ -25,7 +25,7 @@ def get_current_song_info():
 # Initialize Skype mood updater
 sk = Skype()
 try:
-    sk.conn.liveLogin("kgandrup@ohs.stanford.edu", "ElonMuskToTheM00n")
+    sk.conn.liveLogin("SKYPE ACCOUNT EMAIL", "SKYPE ACCOUNT PASSWORD")
     print("Success: Logged in to Skype.")
 except SkypeAuthException:
     print("Error: Failed to log in to Skype.")
