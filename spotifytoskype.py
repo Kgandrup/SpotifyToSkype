@@ -7,9 +7,9 @@ from time import sleep  # Import sleep function for delay
 scope = 'user-read-currently-playing'
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
     scope=scope,
-    client_id='INSERT SPOTIFY CLIENT ID HERE',
-    client_secret='CLIENT SECRET',
-    redirect_uri='http://localhost:8080/callback'
+    client_id='CLIENTID', #spotify app client id
+    client_secret='CLIENTSECRET', #spotify app client secret
+    redirect_uri='http://localhost:8080/callback' #redirect url, don't change unless you know what you're doing. 
 ))
 
 # Check if a song is currently playing
@@ -25,7 +25,7 @@ def get_current_song_info():
 # Initialize Skype mood updater
 sk = Skype()
 try:
-    sk.conn.liveLogin("SKYPE ACCOUNT EMAIL", "SKYPE ACCOUNT PASSWORD")
+    sk.conn.liveLogin("EMAIL", "PASSWORD") #log into microsoft account linked to skype account
     print("Success: Logged in to Skype.")
 except SkypeAuthException:
     print("Error: Failed to log in to Skype.")
@@ -38,14 +38,14 @@ previous_song = None  # Variable to store previous song
 def mood_updater(current_song, artist_name):
     global mood_text, previous_song  # Use the global mood_text and previous_song variables
     if current_song is not None and current_song != previous_song:
-        mood_text = f"(speakermedium) Listening To: {current_song} - {artist_name}"
+        mood_text = f"(speakermedium) Listening To: {current_song} - {artist_name}" #Actual status message to set on user's account
         previous_song = current_song  # Update previous_song with the current_song
     sk.setMood(mood_text)
 
 while True:
     current_song, artist_name = get_current_song_info()
     if current_song is not None and current_song != previous_song:
-        print(f"Listening to: {current_song} - {artist_name}")
+        print(f"Listening to: {current_song} - {artist_name}") 
         mood_updater(current_song, artist_name)
     else:
         print("Same song is playing!")
